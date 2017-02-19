@@ -7,7 +7,23 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <%= image_tag("logo.png",size: "50x30", :alt => "logo") %>
+              <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "navbar-brand" %>
+          <% else %>
+          <%= link_to 'Login', new_user_session_path, :class => "navbar-brand"  %>
+          <% end %>
+          </a>
+
+        </div>
+      </div>
+    </nav>
     <div class="container">
+
       <%= yield %>
     </div>
   </body>
