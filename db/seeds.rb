@@ -1,4 +1,4 @@
-password = 'pass123'
+password = '123456'
 1.upto(5) do |i|
   User.create(
     email: "user-#{i}@example.com",
